@@ -20,15 +20,15 @@ public class MaxCategories {
                 JSONObject jsonObject = (JSONObject) obj;
                 String cat = CategoriesGetter.getCategories((String) jsonObject.get("title"));
                 long amount = (long) jsonObject.get("sum");
-                check(map, cat, amount);
+                countingMap(map, cat, amount);
             }
         } catch (Exception e) {
             e.getMessage();
         }
-        return maximumCheck(map);
+        return maximumCalc(map);
     }
 
-    public static Map.Entry<String, Long> maximumCheck (HashMap < String, Long > map) {
+    public static Map.Entry<String, Long> maximumCalc(HashMap < String, Long > map) {
         Map.Entry<String, Long> maxEntry = null;
         for (Map.Entry<String, Long> entry : map.entrySet()) {
             if (maxEntry == null || entry.getValue() > maxEntry.getValue()) {
@@ -38,7 +38,7 @@ public class MaxCategories {
         return maxEntry;
     }
 
-    public static void check (HashMap < String, Long > map, String cat, Long amount){
+    public static void countingMap(HashMap < String, Long > map, String cat, Long amount){
         if (map.containsKey(cat)) {
             map.put(cat, map.get(cat) + amount);
         } else {
