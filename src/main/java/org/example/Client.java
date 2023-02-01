@@ -19,7 +19,7 @@ public class Client {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 
-            String request = "{\"title\": \"шапка\", \"date\": \"2023.12.01\", \"sum\": 500}";
+            String request = "{\"title\": \"шапка\", \"date\": \"2023.01.12\", \"sum\": 500}";
             writer.println(request);
             JSONObject object = (JSONObject) parser.parse(reader.readLine());
             System.out.println(object);
