@@ -9,7 +9,7 @@ import java.net.Socket;
 
 public class Main {
     public static void main(String[] args) {
-        try (ServerSocket serverSocket = new ServerSocket(11111);) { // стартуем сервер один(!) раз
+        try (ServerSocket serverSocket = new ServerSocket(8989);) { // стартуем сервер один(!) раз
             while (true) { // в цикле(!) принимаем подключения
                 try (
                         Socket socket = serverSocket.accept();
