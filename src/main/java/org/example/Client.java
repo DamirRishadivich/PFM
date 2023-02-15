@@ -13,7 +13,7 @@ import java.net.Socket;
 public class Client {
     public static void main(String[] args) throws ParseException {
         final String host = "127.0.0.1";
-        final int port = 11111;
+        final int port = 8989;
         JSONParser parser = new JSONParser();
         try (Socket socket = new Socket(host, port)) {
             PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
